@@ -11,6 +11,8 @@ tele_bot_token = os.environ.get('tele_bot_token')
 tele_user_id = os.environ.get('tele_user_id')
 # 填入glados账号对应cookie
 cookie = os.environ["cookie"]
+# 填入glados网站验证token
+token = os.environ["token"]
 
 
 def start():
@@ -21,7 +23,7 @@ def start():
     referer = "https://glados.rocks/console/checkin"
     useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
     payload={
-        'token': 'glados_network'
+        'token': token
     }
     checkin = requests.post(url,headers={'cookie': cookie ,'referer': referer,'origin':origin,'user-agent':useragent,'content-type':'application/json;charset=UTF-8'},data=json.dumps(payload))
     state =  requests.get(url2,headers={'cookie': cookie ,'referer': referer,'origin':origin,'user-agent':useragent})

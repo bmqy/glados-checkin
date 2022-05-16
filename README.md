@@ -8,6 +8,7 @@ tencent scf
 ```tele_bot_token```
 ```tele_user_id```
 ```cookie```
+```token```
 
 ### cron
 0 5 6 * * * *
